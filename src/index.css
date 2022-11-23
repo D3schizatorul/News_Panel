@@ -1,13 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
 body {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Montserrat", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.add-news-enter {
+  opacity: 0;
+  animation: 0.6s slide-left;
+}
+
+.add-news-enter-active {
+  opacity: 1;
+  transition: opacity 600ms, transform 600ms;
+}
+
+@keyframes slide-left {
+  from {
+    right: -380px;
+  }
+  to {
+    right: 0;
+  }
+}
+
+.add-news-exit {
+  animation: 0.6s slide-right;
+}
+
+.add-news-exit-active {
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+@keyframes slide-right {
+  from {
+    right: 0px;
+  }
+  to {
+    right: -380px;
+  }
+}
+
+.news-details-enter {
+  opacity: 0;
+}
+
+.news-details-enter-active {
+  opacity: 1;
+  transition: opacity 400ms, transform 400ms;
+}
+
+.news-details-exit {
+  opacity: 1;
+}
+
+.news-details-exit-active {
+  opacity: 0;
+  transition: opacity 200ms, transform 200ms;
+}
+
+::-webkit-scrollbar {
+  z-index: 50;
+  width: 4px;
+  height: 4px;
+  background-color: #adadad;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgb(0 0 0 / 30%);
+  background-color: #f5f5f8;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.44, rgb(122, 153, 217)),
+    color-stop(0.72, rgb(73, 125, 189)),
+    color-stop(0.86, rgb(28, 58, 148))
+  );
 }
