@@ -25,7 +25,7 @@ const NewsCard = (props) => {
 
   const handleRemove = () => {
     axios({
-      url: "http://d3schizatorul.pythonanywhere.com/remove",
+      url: "https://d3schizatorul.pythonanywhere.com/remove",
       method: "GET",
       params: {
         uid: props.uid,
