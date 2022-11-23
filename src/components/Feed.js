@@ -11,7 +11,7 @@ const Feed = (props) => {
 
   const getNews = () => {
     axios({
-      url: "http://127.0.0.1:5000/get-news",
+      url: "http://d3schizatorul.pythonanywhere.com/get-news",
       method: "GET",
     }).then((res) => {
       setNews(res.data);

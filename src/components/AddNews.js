@@ -32,7 +32,7 @@ const AddNews = ({ setOpenAddNews, openAddNews, setFetchNews }) => {
     formData.append("startDate", startDate);
     formData.append("endDate", endDate);
     try {
-      const response = axios.post("http://127.0.0.1:5000/publish", formData);
+      const response = axios.post("http://d3schizatorul.pythonanywhere.com/publish", formData);
       console.log("Server response: ", response);
       setOpenAddNews(false);
       setFetchNews((prevCount) => prevCount + 1);
