@@ -11,7 +11,7 @@ const Feed = (props) => {
 
   const getNews = () => {
     axios({
-      url: "https://d3schizatorul.pythonanywhere.com/get-news",
+      url: "https://news-panel.herokuapp.com/get-news",
       method: "GET",
     }).then((res) => {
       setNews(res.data);
