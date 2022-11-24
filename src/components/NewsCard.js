@@ -25,7 +25,7 @@ const NewsCard = (props) => {
 
   const handleRemove = () => {
     axios({
-      url: "https://d3schizatorul.pythonanywhere.com/remove",
+      url: "https://news-panel.herokuapp.com/remove",
       method: "GET",
       params: {
         uid: props.uid,
