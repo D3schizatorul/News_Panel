@@ -32,7 +32,7 @@ const AddNews = ({ setOpenAddNews, openAddNews, setFetchNews }) => {
     formData.append("startDate", startDate);
     formData.append("endDate", endDate);
     try {
-      const response = axios.post("https://news-panel.herokuapp.com/publish", formData);
+      const response = await axios.post("https://news-panel.herokuapp.com/publish", formData);
       console.log("Server response: ", response);
       setOpenAddNews(false);
       setFetchNews((prevCount) => prevCount + 1);
