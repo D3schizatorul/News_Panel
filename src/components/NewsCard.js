@@ -24,18 +24,20 @@ const NewsCard = (props) => {
   }, []);
 
   const handleRemove = () => {
-    axios({
-      url: "https://news-panel.herokuapp.com/remove",
-      method: "GET",
-      params: {
-        uid: props.uid,
-      },
-    }).then((res) => {
-      console.log(res);
-      props.setFetchNews((prevCount) => prevCount + 1);
-    });
+    if (window.confirm("Delete?")) {
+      axios({
+        url: "https://news-panel.herokuapp.com/remove",
+        method: "GET",
+        params: {
+          uid: props.uid,
+        },
+      }).then((res) => {
+        console.log(res);
+        props.setFetchNews((prevCount) => prevCount + 1);
+      });
+    }
   };
-
+  
   return (
     <div className="w-full sm:w-[50%] lg:w-[33.3%] xl:w-[25%] h-[16rem] px-4 my-4">
       <div className="border h-full">
@@ -69,7 +71,7 @@ const NewsCard = (props) => {
             >
               <div className="rounded-lg shadow-lg relative flex flex-col w-full bg-white">
                 <div className="p-5 border-b">
-                  <h3 className="text-3xl font-semibold">{props.title}</h3>
+                  <h3 className="text-3xl font-semibold line-clamp-1">{props.title}</h3>
                   <p className="mt-2 font-light text-gray-400">{props.startDate}</p>
                 </div>
                 <div className="relative p-6 flex-auto">
