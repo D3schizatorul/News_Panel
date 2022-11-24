@@ -42,7 +42,7 @@ const NewsCard = (props) => {
     <div className="w-full sm:w-[50%] lg:w-[33.3%] xl:w-[25%] h-[16rem] px-4 my-4">
       <div className="border h-full">
         <div className="flex justify-between my-2 mx-4">
-          <p className="text-[22px] font-medium">{props.title}</p>
+          <p className="text-[22px] font-medium line-clamp-1">{props.title}</p>
           <button className="flex items-center" onClick={handleRemove}>
             <AiOutlineMinusSquare className="text-[30px]" />
           </button>
@@ -71,7 +71,7 @@ const NewsCard = (props) => {
             >
               <div className="rounded-lg shadow-lg relative flex flex-col w-full bg-white">
                 <div className="p-5 border-b">
-                  <h3 className="text-3xl font-semibold line-clamp-1">{props.title}</h3>
+                  <h3 className="text-3xl font-semibold">{props.title}</h3>
                   <p className="mt-2 font-light text-gray-400">{props.startDate}</p>
                 </div>
                 <div className="relative p-6 flex-auto">
