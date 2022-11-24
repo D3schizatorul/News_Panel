@@ -28,8 +28,8 @@ const Feed = (props) => {
       {news
         .filter((element) => element.end_date > currentDate)
         .sort((a, b) => {
-          if (a.start_date < b.start_date) return -1;
-          else if (a.start_date > b.start_date) return 1;
+          if (a.start_date < b.start_date) return 1;
+          else if (a.start_date > b.start_date) return -1;
           else return 0;
         })
         .map((elem) => (
